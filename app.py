@@ -26,7 +26,7 @@ def index():
         try:
             if str(request.form['yt-link']).lower() == "bautz":
                 flash("Sie suchen also nach dem großen Lebautzski")
-                flash("Copy Playlist link here:")
+                flash(Markup("Hier werden Sie fündig:  <a style="" href='https://youtu.be/OIbspwnIf24'>The Big Lebautzski</a>" ))
                 return render_template('index.html')
             p = Playlist(request.form['yt-link'])
             playlist_duration = 0
