@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request,flash, Markup
 from pytube import Playlist, YouTube
 
-
-# https://youtu.be/P4F3PzCMrtk?list=PLqXS1b2lRpYTC04DA9J8hta6oYEKOd91N
 def secondsTo(n):
     n = int(n)
     if n < 60:
@@ -24,7 +22,7 @@ app.secret_key = "LMJlcau05qOOHZU3TOCXpofLa"
 def index():
     if request.method == "POST":
         try:
-            if str(request.form['yt-link']).lower() == "bautz":
+            if (x:=str(request.form['yt-link']).lower()) == "bautz" or sorted(x) == sorted("bautz") :
                 flash("Sie suchen also nach dem großen Lebautzski")
                 flash(Markup("Hier werden Sie fündig:  <a href='https://youtu.be/9cK3QYZ7XaA'>The Big Lebautzski</a>"))
                 return render_template('index.html')
@@ -49,12 +47,6 @@ def index():
 
     flash("Copy Playlist link here:")
     return render_template('index.html')
-
-
-"""@app.route("/yt-playlist", methods=["POST", "GET"])
-def greet():
-    flash("Hi " + str(request.form['name_input']) +", great to see you !")
-    return render_template('index.html')"""
 
 if __name__ == '__main__':
     app.run(port=1337, debug=False)
