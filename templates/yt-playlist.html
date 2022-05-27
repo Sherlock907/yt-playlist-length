@@ -19,20 +19,20 @@
         <header class="masthead">
             <div class="container position-relative fullvh2">
                 <div class="row justify-content-center">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 col-md-10 col-lg-8 glass">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Get Youtube Playlist Length</h1>
+                            <h1 class="mb-5" style="font-family: ui-monospace;">Youtube-Playlist Length</h1>
                             <form class="form-subscribe" method="POST">
                                 <div class="row">
                                     <div class="col">
-                                        <p><input class="col-sm-7" type = "text" name="name_input"/></p>
-                                        <button class="btn btn-primary btn-sm col-sm-3" id="greet" type="submit" value = "GREET">Submit</button>
-
-                                        <div style="padding-top: 45px">
+                                        <p><input class="col-sm-7 col-md-8" type = "text" name="yt-link" placeholder="https://www.youtube.com/playlist?list=PLqXS1b2lRpYTC04DA9J8hta6oYEKOd91N"/></p>
+                                        <button class="btn btn-primary btn-sm col-sm-3" id="yt-playlist" type="submit" value = "GREET">Submit</button>
+                                        <div style="padding-top: 25px;">
                                         {% for message in get_flashed_messages()%}
                                             <p> {{message}} </p>
-                                        {% endfor %}</div>
+                                        {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -44,8 +44,8 @@
 
         <!--Footer-->
         <footer>
-            <div class="myfooter" style="width:100%; text-align:left">App build with Flask</div>
-            <div class="myfooter" style="width:100%;text-align:right">Background Image from <a href="https://de.vecteezy.com/membros/kroytorsveta331286">Vecteezy.com</a></div>
+            <div class="myfooter" style="width:100%; text-align:left">App build with Flask & PyTube</div>
+            <div class="myfooter" style="width:100%;text-align:right">Background Image from <a href="https://de.vecteezy.com/">Vecteezy.com</a></div>
         </footer>
     </body>
 </html>
