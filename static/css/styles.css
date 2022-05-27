@@ -11427,8 +11427,8 @@ footer.footer {
     padding-top: 35px;
     background: rgba( 05, 045, 055, 0.15 );
     box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 15px );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
     border-radius: 10px;
     border: 1px solid rgba( 170, 11, 195, 0.4);
 
