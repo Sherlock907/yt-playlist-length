@@ -155,6 +155,7 @@ h6, .h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-family: monospace;
 }
 
 abbr[title],
@@ -235,11 +236,12 @@ sup {
 }
 
 a {
-  color: purple;
-  text-decoration: underline;
+  color: deeppink;
+  text-decoration: none;
 }
 a:hover {
-  color: violet;
+  color: deeppink;
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3021,7 +3023,7 @@ textarea.form-control-lg {
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  // box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .btn:disabled, .btn.disabled, fieldset:disabled .btn {
   pointer-events: none;
@@ -3030,28 +3032,28 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: purple;
-  border-color: violet;
+  background-color: rgba(58,4,54,0.25);
+  border-color: rgba( 170, 11, 195, 0.4);
 }
 .btn-primary:hover {
 
   color: #fff;
-  background-color: darkviolet;
-  border-color: purple;
+  background-color: rgba(58,4,54,0.45);
+  border-color: violet;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: darkviolet;
-  border-color: purple;
-  box-shadow: 0 0 0 0.25rem rgba(88, 9, 102, 0.5);
+  background-color: rgba(58,4,54,0.25);
+  border-color: skyblue;
+  // box-shadow: 0 0 0 0.25rem rgba(88, 9, 102, 0.5);
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: darkviolet;
-  border-color: purple;
+  background-color: rgba(58,4,54,0.25);
+  border-color: skyblue;
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(88, 9, 102, 0.5);
+  // box-shadow: 0 0 0 0.25rem rgba(88, 9, 102, 0.5);
 }
 .btn-primary:disabled, .btn-primary.disabled {
   color: #fff;
@@ -7377,7 +7379,7 @@ textarea.form-control-lg {
 }
 
 .mb-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .mb-auto {
@@ -11328,7 +11330,7 @@ header.masthead h1, header.masthead .h1 {
     padding-bottom: 12rem;*/
   }
   header.masthead h1, header.masthead .h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -11387,7 +11389,7 @@ footer.footer {
 }
 .fullvh2 {
     height: 100vh;
-    padding-top: 2.5rem;
+    padding-top: 10rem;
 }
 
 .myfooter {
@@ -11418,4 +11420,16 @@ footer.footer {
  padding-left: 15px;
   display: inline-block;
   line-height: 1em;
+}
+
+.glass {
+    padding-bottom: 35px;
+    padding-top: 35px;
+    background: rgba( 05, 045, 055, 0.15 );
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px );
+    border-radius: 10px;
+    border: 1px solid rgba( 170, 11, 195, 0.4);
+
 }
