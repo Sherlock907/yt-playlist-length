@@ -11304,7 +11304,7 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/vecteezy.jpg") no-repeat center center;
+  background: url("../assets/img/neon.jpg") no-repeat center center;
   background-size: cover;
  /* padding-top: 8rem;
   padding-bottom: 8rem;*/
@@ -11317,7 +11317,7 @@ header.masthead:before {
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.33;
+  opacity: 0.45;
 }
 header.masthead h1, header.masthead .h1 {
   font-size: 2rem;
@@ -11407,4 +11407,15 @@ footer.footer {
 }
 .myfooter a:hover {
     color:white;
+}
+
+.ml2 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+.ml2 .letter {
+ padding-left: 15px;
+  display: inline-block;
+  line-height: 1em;
 }
