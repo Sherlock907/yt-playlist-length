@@ -6,11 +6,12 @@ import os
 
 
 def getseconds(n):
-    n, temp, duration = n.replace("PT", ""), 0, 0
+    n, temp, duration = n.replace("PT", ""), "", 0
 
     for c in n:
         if c.isnumeric():
             temp += c
+            continue
         elif c == "H":
             duration += int(temp) * 60**2
             temp = ""
@@ -59,6 +60,7 @@ def getlength(p):
             id=','.join(vid_ids[50 * div:50 * div + vid_count % 50])
         )
         vid_response = vid_request.execute()
+
         for item in vid_response ['items']:
             duration += getseconds(item['contentDetails']['duration'])
 
@@ -70,7 +72,7 @@ def getlength(p):
         vid_response = vid_request.execute()
         for item in vid_response['items']:
             duration += getseconds(item['contentDetails']['duration'])
-
+            
     return secondsTo(duration)
 
 
@@ -96,9 +98,6 @@ def index():
                 flash(Markup('''<h1 class="ml2">It's Mariya</h1>'''))
                 flash(Markup('''<script>var textWrapper=document.querySelector('.ml2');textWrapper.innerHTML=textWrapper.textContent.replace(/\S/g,"<span class='letter'>$&</span>");anime.timeline({loop:true}).add({targets:'.ml2 .letter',opacity:[0,0],translateZ:0,easing:"easeOutExpo",duration:1750,delay:(el,i)=>70*i}).add({targets:'.ml2 .letter',scale:[4,1],opacity:[0,1],translateZ:0,easing:"easeOutExpo",duration:2550,delay:(el,i)=>700*i}).add({targets:'.ml2',opacity:0,duration:1000,easing:"easeOutExpo",delay:1000});</script>'''))
                 return render_template('index.html')
-            flash(type(os.getenv("Test")))
-            flash(len(os.getenv("Test")))
-            flash(len(os.getenv("API_KEY")))
             link = request.form['yt-link']
             p = Playlist(link)
             flash(Markup("<a href='https://www.youtube.com/playlist?list=" + p.playlist_id + "'>" + p.title + "</a>"))
