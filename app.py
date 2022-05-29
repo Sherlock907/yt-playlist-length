@@ -1,9 +1,8 @@
 from googleapiclient.discovery import build
-from pytube import YouTube,Playlist
 from flask import Flask, render_template, request,flash, Markup
 from pytube import Playlist, YouTube
 import os
-import gunicorn
+
 
 
 def getseconds(n):
@@ -100,7 +99,7 @@ def index():
             link = request.form['yt-link']
             p = Playlist(link)
             flash(Markup("<a href='https://www.youtube.com/playlist?list=" + p.playlist_id + "'>" + p.title + "</a>"))
-            flash(os.environ.get("Test"))
+            flash(os.getenv("Test"))
             playlist_duration = getlength(p)
             flash("Total Playlist duration:\n" + playlist_duration)
             flash("Number of Videos: " + str(p.length))
