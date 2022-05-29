@@ -44,7 +44,7 @@ def secondsTo(n):
         return f"{hours}:{min}:{sec}"
 
 def getlength(p):
-    api_key = os.environ.get('API_KEY')
+    api_key = os.getenv('API_KEY')
     youtube = build('youtube', 'v3', developerKey=api_key)
 
     # get videoID with pytube as youtube API only gets you the first 50 with workaround 100...
@@ -99,7 +99,6 @@ def index():
             link = request.form['yt-link']
             p = Playlist(link)
             flash(Markup("<a href='https://www.youtube.com/playlist?list=" + p.playlist_id + "'>" + p.title + "</a>"))
-            flash(os.getenv("Test"))
             playlist_duration = getlength(p)
             flash("Total Playlist duration:\n" + playlist_duration)
             flash("Number of Videos: " + str(p.length))
