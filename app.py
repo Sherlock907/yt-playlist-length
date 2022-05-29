@@ -2,7 +2,6 @@ from googleapiclient.discovery import build
 from pytube import YouTube,Playlist
 from flask import Flask, render_template, request,flash, Markup
 from pytube import Playlist, YouTube
-from boto.s3.connection import S3Connection
 import os
 import gunicorn
 
@@ -46,7 +45,7 @@ def secondsTo(n):
         return f"{hours}:{min}:{sec}"
 
 def getlength(p):
-    api_key = S3Connection(os.environ['API_Key'])
+    api_key = os.environ.get('API_Key',None)
     youtube = build('youtube', 'v3', developerKey=api_key)
 
     # get videoID with pytube as youtube API only gets you the first 50 with workaround 100...
