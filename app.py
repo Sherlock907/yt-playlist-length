@@ -42,7 +42,12 @@ def secondsTo(n):
             min = "0" + str(min)
         if sec < 10:
             sec = "0" + str(sec)
-        return f"{hours}:{min}:{sec}"
+        if hours >= 24:
+            days = hours // 24
+            hours = hours % 24
+            return f"{days}:{hours}:{min}:{sec}"
+        else:
+            return f"{hours}:{min}:{sec}"
 
 def getlength(p):
     api_key = os.getenv('API_KEY')
@@ -72,7 +77,7 @@ def getlength(p):
         vid_response = vid_request.execute()
         for item in vid_response['items']:
             duration += getseconds(item['contentDetails']['duration'])
-            
+
     return secondsTo(duration)
 
 
@@ -104,7 +109,10 @@ def index():
             playlist_duration = getlength(p)
             flash("Total Playlist duration:\n" + playlist_duration)
             flash("Number of Videos: " + str(p.length))
-            flash("Last updated: "+ str(p.last_updated))
+            try:
+                flash("Last updated: "+ str(p.last_updated))
+            except:
+                flash("Last updated: probably Today :)")
             return render_template('yt-playlist.html')
         except:
             flash("Whoops!.. Something went wrong.")
