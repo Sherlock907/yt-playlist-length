@@ -45,6 +45,8 @@ def secondsTo(n):
         if hours >= 24:
             days = hours // 24
             hours = hours % 24
+            if hours < 10:
+                hours = "0" + str(hours)
             return f"{days}:{hours}:{min}:{sec}"
         else:
             return f"{hours}:{min}:{sec}"
