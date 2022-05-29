@@ -45,7 +45,7 @@ def secondsTo(n):
         return f"{hours}:{min}:{sec}"
 
 def getlength(p):
-    api_key = os.environ.get('API_KEY',None)
+    api_key = os.environ.get('API_KEY')
     youtube = build('youtube', 'v3', developerKey=api_key)
 
     # get videoID with pytube as youtube API only gets you the first 50 with workaround 100...
