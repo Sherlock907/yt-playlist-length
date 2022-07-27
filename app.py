@@ -23,33 +23,12 @@ def getseconds(n):
             temp = ""
     return duration
 
-def secondsTo(n):
-    n = int(n)
-    if n < 60:
-        return f"{n} Seconds"
-    if n >= 60:
-        min,sec  = n//60, n%60
-        if n < 60*60:
-            if min < 10:
-                min = "0" + str(min)
-            if sec < 10:
-                sec = "0" + str(sec)
-            return f"{min} Minutes, {sec} Seconds"
-    if min >= 60:
-        hours = min//60
-        min = min %60
-        if min < 10:
-            min = "0" + str(min)
-        if sec < 10:
-            sec = "0" + str(sec)
-        if hours >= 24:
-            days = hours // 24
-            hours = hours % 24
-            if hours < 10:
-                hours = "0" + str(hours)
-            return f"{days}:{hours}:{min}:{sec}"
-        else:
-            return f"{hours}:{min}:{sec}"
+
+def secondsTo(s):
+    if s >= 86400:
+        return f"{s // 86400:02}:{s % 86400 // 3600:02}:{s // 60 % 60:02}:{s % 60:02}"
+    else:
+        return f"{s // 3600:02}:{s // 60 % 60:02}:{s % 60:02}"
 
 def getlength(p):
     api_key = os.getenv('API_KEY')
